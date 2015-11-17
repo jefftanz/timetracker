@@ -1,0 +1,41 @@
+<ion-view>
+
+  <ion-side-menus>
+
+    <ion-side-menu-content>
+
+      <ion-nav-bar class="bar-royal">
+
+        <ion-nav-buttons side="left">
+          <button menu-toggle="left"
+                  class="button button-icon button-clear ion-navicon">
+          </button>
+        </ion-nav-buttons>
+
+        <ion-nav-back-button></ion-nav-back-button>
+
+      </ion-nav-bar>
+
+      <ion-nav-view></ion-nav-view>
+
+    </ion-side-menu-content>
+
+    <ion-side-menu side="left">
+      <ion-header-bar class="bar-royal">
+        <h1 class="title">Menu</h1>
+      </ion-header-bar>
+      <ion-content>
+        <ion-list>
+
+          <ion-item href="#/menu/time" class="item-icon-left" menu-close><i class="icon ion-android-time"></i>My Time</ion-item>
+          <ion-item href="#/menu/category" class="item-icon-left" menu-close><i class="icon ion-ios-pricetag-outline"></i>Categories</ion-item>
+          <ion-item href="#/menu/stats" class="item-icon-left" menu-close><i class="icon ion-stats-bars"></i>Stats</ion-item>
+          <ion-item href="#/menu/account" class="item-icon-left" menu-close><i class="icon ion-android-person"></i>Account</ion-item>
+
+        </ion-list>
+      </ion-content>
+    </ion-side-menu>
+
+  </ion-side-menus>
+
+</ion-view>

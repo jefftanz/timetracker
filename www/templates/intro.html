@@ -1,0 +1,170 @@
+<ion-view
+    hide-nav-bar="true"
+    hide-back-button="true">
+
+  <!-- TODO add click on item to move to specific index slide -->
+  <ion-slide-box class="card"
+                 style="height:85%;"
+                 active-slide="activeSlide">
+
+    <ion-slide>
+
+      <div style="height: 60%;">
+        <br>
+        <div class="row item item-thumbnail-left" >
+          <img ng-src="img/perry.png">
+        </div>
+
+      </div>
+
+      <div style="height: 40%;">
+        <div class="item item-borderless"
+             style="text-align: center">
+          <h2>Time tracker</h2>
+        </div>
+
+        <div class="item item-borderless item-text-wrap"
+             style="text-align: center">
+          <p> Track your time spent throughout the day and become more efficient. </p>
+        </div>
+
+      </div>
+
+    </ion-slide>
+
+    <ion-slide>
+
+      <div style="height: 60%;">
+        <br>
+        <ion-list>
+          <div class="item item-avatar-left">
+            <img ng-src="img/perry.png">
+            <div style="vertical-align: middle;" >
+              <h2> Drive to and from work </h2>
+              <p> Commute - <span > 3 hours</span></p>
+            </div >
+          </div>
+          <div class="item item-avatar-left">
+            <img ng-src="img/max.png">
+            <div style="vertical-align: middle;" >
+              <h2> Cook dinner </h2>
+              <p> Cook <span > 1 hour</span></p>
+            </div >
+          </div>
+          <div class="item item-avatar-left">
+            <img ng-src="img/ben.png">
+            <div style="vertical-align: middle;" >
+              <h2> Watched TV show </h2>
+              <p> Entertainment - <span > 1 hour</span></p>
+            </div >
+          </div>
+        </ion-list>
+      </div>
+
+
+      <div style="height: 40%;">
+        <div class="item item-borderless"
+             style="text-align: center">
+          <h2>Organize by category</h2>
+        </div>
+
+        <div class="item item-borderless item-text-wrap"
+             style="text-align: center">
+          <p>Enter in your time spent throughout the day, group by the time categories</p>
+        </div>
+      </div>
+
+    </ion-slide>
+
+    <ion-slide>
+
+      <div style="height: 60%;">
+
+        <ion-list>
+          <div class="row item item-divider">
+            <div class="col" style="text-align: center">
+              Basic Nutrition
+            </div>
+          </div>
+
+          <!-- Calories -->
+          <div class="row item">
+            <div class="col">Calories</div>
+            <div class="col">1800 / 2000</div>
+            <div class="col" style="text-align: center">90%</div>
+          </div>
+
+          <!-- Carbs -->
+          <div class="row item">
+            <div class="col">Carbs</div>
+            <div class="col">100 / 130 g</div>
+            <div class="col" style="text-align: center">77%</div>
+          </div>
+
+          <!-- Fat -->
+          <div class="row item">
+            <div class="col">Fat</div>
+            <div class="col">20 / 60 g</div>
+            <div class="col" style="text-align: center">33%</div>
+          </div>
+
+          <div class="row item item-divider">
+            <div class="col" style="text-align: center">
+              MyPlate Standards
+            </div>
+          </div>
+
+          <!-- Vegetable -->
+          <div class="row item">
+            <div class="col">Vegetable</div>
+            <div class="col">4 / 4 cups</div>
+            <div class="col" style="text-align: center">100%</div>
+          </div>
+
+          <!-- Fruit -->
+          <div class="row item">
+            <div class="col">Fruit</div>
+            <div class="col">2 / 4 cups</div>
+            <div class="col" style="text-align: center">50%</div>
+          </div>
+
+          <!-- ProteinG -->
+          <div class="row item">
+            <div class="col">Protein</div>
+            <div class="col">3 / 4 ounces</div>
+            <div class="col" style="text-align: center">75%</div>
+          </div>
+
+        </ion-list>
+      </div>
+
+      <div style="height: 40%;">
+        <div class="item item-borderless"
+             style="text-align: center">
+            <h2>Analyze Data</h2>
+        </div>
+        <div class="item item-borderless item-text-wrap"
+             style="text-align: center">
+          <p>Examine your time spent for the day to stay efficient and not waste your valuable time.</p>
+        </div>
+      </div>
+
+    </ion-slide>
+
+  </ion-slide-box>
+
+  <table style="table-layout: fixed; width: 100%; height: 10%;">
+
+    <tr>
+      <td>
+        <button class="button button-royal" ng-click="signup()"
+                style="width: 100%; height: 100%; padding-right: 10px;"> Sign Up </button>
+      </td>
+      <td>
+        <button class="button button-royal" ng-click="login()"
+                style="width: 100%; height: 100%; padding-left: 10px;"> Log In </button>
+      </td>
+    </tr>
+  </table>
+
+</ion-view>

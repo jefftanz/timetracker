@@ -1,0 +1,59 @@
+<ion-view view-title="Add Item" >
+
+  <ion-nav-bar class="bar-royal">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+
+	<ion-content >
+		<form name="createTimeForm"
+          id ="createForm"
+		      novalidate=""
+		      class="create-form card" >
+			<ion-list >
+
+        <!-- Description -->
+        <div class="row item"
+             style="padding-top: 5px; padding-bottom: 5px;">
+          <div class="col">Description</div>
+          <input class ="col item-input-wrapper"
+                 type="text" name="title"
+                 ng-model="formData.title"
+                 style="text-align: left; padding-left: 10px;">
+        </div>
+
+        <!-- Time Category -->
+        <label class="item item-input item-select"
+               style="padding-top: 5px; padding-bottom: 10px;">
+          <div class="input-label" >Time Category</div >
+          <select
+            ng-options="group as group.desc for group in formData.timeCategory track by group.value"
+            ng-model="formData.selectedOption">
+          </select>
+        </label >
+
+        <ionic-timepicker input-obj="timePickerObject">
+          <button class="button button-block button-positive overflowShow">
+            <standard-time-meridian etime='timePickerObject.inputEpochTime'
+              ng-bind="formData.startTime"></standard-time-meridian>
+          </button>
+        </ionic-timepicker>
+
+        <p>
+          test
+          <standard-time-meridian etime='epochTime'></standard-time-meridian>
+        </p>
+
+
+			</ion-list >
+
+		</form >
+	</ion-content >
+
+  <!--<div class="bar bar-footer">-->
+    <!--<button class="button button-positive"-->
+            <!--type="submit"-->
+            <!--style="width: 100%"-->
+            <!--form="createForm">Save</button>-->
+  <!--</div>-->
+
+</ion-view >

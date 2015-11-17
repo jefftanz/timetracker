@@ -1,0 +1,46 @@
+<ion-view view-title="Time" >
+
+  <ion-nav-buttons side="secondary" >
+    <button class="button button-clear button-icon ion-android-add-circle"
+            ng-click="addTime()" >
+    </button >
+  </ion-nav-buttons >
+
+	<ion-content >
+
+    <div class="card">
+
+      <ion-refresher
+          pulling-text="Pull to refresh..."
+          on-refresh="refreshItems()" >
+      </ion-refresher >
+
+      <div class="list">
+        <a class="item item-avatar-left"
+           ng-click="editTime(time_item.id)"
+           ng-repeat="time_item in time.results">
+
+          <img style="align-content: center" ng-src="{{time_item.attributes.iconName}}">
+
+          <div style="vertical-align: middle;" >
+            <h2 >{{time.attributes.title}}</h2 >
+            <p>Category Here - <span am-time-ago="time_item.attributes.theDate"></span></p>
+          </div >
+        </a>
+      </div >
+
+      <ion-infinite-scroll
+          ng-if="time.hasMore"
+          on-infinite="nextPage()"
+          immediate-check="false" >
+      </ion-infinite-scroll >
+
+      <div class="padding text-center"
+           ng-if="!time.hasMore" >
+        <p >No more results</p >
+      </div >
+
+    </div>
+
+	</ion-content >
+</ion-view >

@@ -1,0 +1,37 @@
+<ion-view view-title="Account" >
+
+
+	<ion-nav-buttons side="secondary" >
+		<!--<button class="button button-clear"-->
+		        <!--ng-click="editAccount()" >Edit-->
+		<!--</button >-->
+	</ion-nav-buttons >
+
+	<ion-content padding="true" scroll="false" >
+
+		<form name="viewAccountForm" novalidate="">
+
+      <div class="card">
+
+        <ion-list >
+
+          <!-- Name -->
+          <div class="row item item-borderless">
+            <div class="col">Name</div>
+            <div class="col">{{accountData.user.attributes.name}}</div>
+          </div>
+
+          <!-- Email -->
+          <div class="row item item-borderless">
+            <div class="col">Email</div>
+            <div class="col">{{accountData.user.attributes.email}}</div>
+          </div>
+
+        </ion-list >
+
+      </div>
+
+		</form >
+	</ion-content >
+
+</ion-view >
