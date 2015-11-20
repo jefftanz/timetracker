@@ -8,7 +8,7 @@
 		<form name="createTimeForm"
           id ="createForm"
 		      novalidate=""
-		      class="create-form card" >
+		      class="create-form card">
 			<ion-list >
 
         <!-- Description -->
@@ -26,27 +26,68 @@
                style="padding-top: 5px; padding-bottom: 10px;">
           <div class="input-label" >Time Category</div >
           <select
-            ng-options="group as group.desc for group in formData.timeCategory track by group.value"
+            ng-options="group as group.desc for group in formData.timeGroups track by group.value"
             ng-model="formData.selectedOption">
           </select>
         </label >
 
-        <ionic-timepicker input-obj="timePickerObject">
-          <button class="button button-block button-positive overflowShow">
-            <standard-time-meridian etime='timePickerObject.inputEpochTime'
-              ng-bind="formData.startTime"></standard-time-meridian>
-          </button>
-        </ionic-timepicker>
+        <!--<ionic-timepicker input-obj="timePickerObject">-->
+          <!--<button class="button button-block button-positive overflowShow">-->
+            <!--<standard-time-meridian etime='epochTime'></standard-time-meridian>-->
+          <!--</button>-->
+        <!--</ionic-timepicker>-->
+        <!--  -->
 
-        <p>
-          test
-          <standard-time-meridian etime='epochTime'></standard-time-meridian>
-        </p>
+        <!-- Date Picker -->
+        <div class="row item"
+             style="padding-top: 5px; padding-bottom: 5px;">
+          <div class="col col-center">Date</div>
+          <ionic-datepicker input-obj="datepickerTheDate">
+            <button class="button button-block button-positive"> {{theDate | date:'M/d/yy'}}</button>
+          </ionic-datepicker>
+        </div>
 
+        <!-- Start Time Picker -->
+        <div class="row item"
+             style="padding-top: 5px; padding-bottom: 5px;">
+          <div class="col col-center">Start time</div>
+          <ionic-timepicker input-obj="timePickerStartTime">
+            <button class="button button-block button-positive overflowShow">
+              <standard-time-meridian etime='startTime'></standard-time-meridian>
+            </button>
+          </ionic-timepicker>
+        </div>
+
+        <!-- End Time Picker-->
+        <div class="row item">
+          <div class="col col-center">End time</div>
+          <ionic-timepicker input-obj="timePickerEndTime">
+            <button class="button button-block button-positive overflowShow">
+              <standard-time-meridian etime='endTime'></standard-time-meridian>
+            </button>
+          </ionic-timepicker>
+        </div>
+
+        <!--<ionic-timepicker input-obj="timePickerObject">-->
+          <!--<button class="button button-block button-positive overflowShow">-->
+            <!--<standard-time-meridian etime='timePickerObject.inputEpochTime'-->
+              <!--ng-bind="formData.startTime"></standard-time-meridian>-->
+          <!--</button>-->
+        <!--</ionic-timepicker>-->
+
+        <!--<p>-->
+          <!--test-->
+          <!--<standard-time-meridian etime='epochTime'></standard-time-meridian>-->
+        <!--</p>-->
 
 			</ion-list >
 
 		</form >
+
+    <button class="button button-block button-positive"
+            style="text-align: center;"
+            ng-click="createTime(createTimeForm)" >Save
+    </button>
 	</ion-content >
 
   <!--<div class="bar bar-footer">-->

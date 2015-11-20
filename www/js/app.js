@@ -6,6 +6,7 @@ var app = angular.module('timetracker', [
   'parse-angular',
   'parse-angular.enhance',
   'ionic-timepicker',
+  'ionic-datepicker',
   'timetracker.controllers.intro',
   'timetracker.controllers.authentication',
   'timetracker.controllers.account',
@@ -13,7 +14,8 @@ var app = angular.module('timetracker', [
   'timetracker.services.authentication',
   'timetracker.services.time',
   'timetracker.directives.standardTime',
-  'timetracker.myUtil.basic'
+  'timetracker.myUtil.basic',
+  'timetracker.filters.timelength',
 ]);
 
 //TODO need to add
@@ -36,7 +38,7 @@ app.run(function ($ionicPlatform, $location) {
   });
 
   // Initialise Parse
-  Parse.initialize("<KEY>","<KEY>");
+  Parse.initialize("<key>","<key>");
 
   var firstVisit = localStorage.getItem('firstVisit');
   if (!firstVisit) {

@@ -29,7 +29,7 @@ app.service("TimeService", function ($q, $ionicPopup, AuthService) {
 			// Initialise Query
 			var Time = Parse.Object.extend("Time");
 			var timeQuery = new Parse.Query(Time);
-			timeQuery.descending('created');
+			timeQuery.descending('theDate');
 			timeQuery.equalTo("owner", AuthService.user);
 
 			// Paginate
@@ -40,6 +40,7 @@ app.service("TimeService", function ($q, $ionicPopup, AuthService) {
 			timeQuery.find({
 				success: function (results) {
 					angular.forEach(results, function (item) {
+            console.log("timeSEQ: "+item.get('timeSE'));
             self.results.push(item);
 					});
 					//console.debug(self.results);
@@ -67,10 +68,19 @@ app.service("TimeService", function ($q, $ionicPopup, AuthService) {
 
       time.set("owner", user);
       time.set("title", data.title);
-      time.set("theDate", new Date());
+      //TODO need to apply the startTime to the 'theDate' field
+      time.set("theDate", data.theDate);
       time.set("startTime", data.startTime);
       time.set("endTime", data.endTime);
-      time.set("timeCategory", data.timeCategory);
+      time.set("timeSE", data.startTime.toString() +"|"+ data.endTime.toString());
+
+      console.log("title: "+data.title);
+      console.log("theDate: "+ data.theDate);
+      console.log(data.startTime);
+      console.log(data.endTime);
+
+      time.set("timeCategory", data.selectedOption.value);
+      console.log(data.selectedOption.value);
 
       switch(data.selectedOption.value){
         default: iconName = 'img/mike.png';break;
@@ -124,10 +134,11 @@ app.service("TimeService", function ($q, $ionicPopup, AuthService) {
       time.set("owner", user);
       time.set("id", timeId);
       time.set("title", formData.title);
-      time.set("theDate", new Date());
-      time.set("startTime", '');
-      time.set("endTime", '');
+      time.set("theDate", formData.theDate);
+      time.set("startTime", formData.startTime);
+      time.set("endTime", formData.endTime);
       time.set("timeCategory", formData.selectedOption.value);
+      time.set("timeSE", formData.startTime.toString() + "|"+ formData.endTime.toString());
 
       switch(formData.selectedOption.value){
         default : iconName = 'img/mike.png';break;

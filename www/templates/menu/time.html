@@ -20,11 +20,16 @@
            ng-click="editTime(time_item.id)"
            ng-repeat="time_item in time.results">
 
-          <img style="align-content: center" ng-src="{{time_item.attributes.iconName}}">
+          <img style="align-content: center"
+               ng-src="{{time_item.attributes.iconName}}">
 
           <div style="vertical-align: middle;" >
-            <h2 >{{time.attributes.title}}</h2 >
-            <p>Category Here - <span am-time-ago="time_item.attributes.theDate"></span></p>
+            <h2 >{{time_item.attributes.title}}</h2 >
+            <p>{{time_item.attributes.theDate | date:'EEE'}} -
+              <span standard-time-meridian etime='time_item.attributes.startTime'></span>
+              <span>{{time_item.attributes.timeSE | timelength}}</span>
+            </p>
+
           </div >
         </a>
       </div >
